@@ -7,9 +7,8 @@
 <body>
     <script>
         function computerPlay() {
-            let rand = Math.floor(Math.random * 3);
-            let choice = null;
-
+            let rand = Math.floor(Math.random() * 3);
+            let choice;
             switch(rand) {
                 case 0:
                 choice = "rock";
@@ -21,11 +20,74 @@
                 choice = "scissors";
                 break;
             }
-
             return choice;
         }
 
+        // compare selections & return string indicating
+        // selections & winner
         function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+
+            let playerWon, comparisonStatement;
+
+            // player win cases
+            if (playerSelection === "rock"
+            && computerSelection === "scissors") {
+                playerWon = 1;
+                comparisonStatement = "Rock beats Scissors.";
+            } else if (playerSelection === "paper"
+            && computerSelection === "rock") {
+                playerWon = 1;
+                comparisonStatement = "Paper beats Rock.";
+            } else if (playerSelection === " scissors"
+            && computerSelection === "paper") {
+                playerWon = 1;
+                comparisonStatement = "Scissors beats Paper.";
+            }
+            // computer win cases
+            else if (computerSelection === "rock"
+            && playerSelection === "scissors") {
+                playerWon = 2;
+                comparisonStatement = "Rock beats Scissors.";
+            } else if (computerSelection === "paper"
+            && playerSelection === "rock") {
+                playerWon = 2;
+                comparisonStatement = "Paper beats Rock.";
+            } else if (computerSelection === " scissors"
+            && playerSelection === "paper") {
+                playerWon = 2;
+                comparisonStatement = "Scissors beats Paper.";
+            }
+            // tie cases 
+            else if (computerSelection === "rock"
+            && playerSelection === "rock") {
+                playerWon = 0;
+                comparisonStatement = "Rock and Rock.";
+            } else if (computerSelection === "paper"
+            && playerSelection === "paper") {
+                playerWon = 0;
+                comparisonStatement = "Paper and Paper.";
+            } else if (computerSelection === " scissors"
+            && playerSelection === "scissors") {
+                playerWon = 0;
+                comparisonStatement = "Scissors and Scissors.";
+            }
+
+            // determine winner statement
+            switch(playerWon) {
+                case 0:
+                    winnerStatement = "Tie!"
+                    break;
+                case 1:
+                    winnerStatement = "You Win!"
+                    break;
+                case 2:
+                    winnerStatement = "You Lose!"
+                    break;
+            }
+
+            return winnerStatement + " " + comparisonStatement;
 
         }
 
