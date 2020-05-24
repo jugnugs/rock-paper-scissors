@@ -29,7 +29,7 @@
             playerSelection = playerSelection.toLowerCase();
             computerSelection = computerSelection.toLowerCase();
 
-            let playerWon, comparisonStatement;
+            let playerWon, winnerStatement, comparisonStatement;
 
             // player win cases
             if (playerSelection === "rock"
@@ -40,7 +40,7 @@
             && computerSelection === "rock") {
                 playerWon = 1;
                 comparisonStatement = "Paper beats Rock.";
-            } else if (playerSelection === " scissors"
+            } else if (playerSelection === "scissors"
             && computerSelection === "paper") {
                 playerWon = 1;
                 comparisonStatement = "Scissors beats Paper.";
@@ -54,7 +54,7 @@
             && playerSelection === "rock") {
                 playerWon = 2;
                 comparisonStatement = "Paper beats Rock.";
-            } else if (computerSelection === " scissors"
+            } else if (computerSelection === "scissors"
             && playerSelection === "paper") {
                 playerWon = 2;
                 comparisonStatement = "Scissors beats Paper.";
@@ -68,7 +68,7 @@
             && playerSelection === "paper") {
                 playerWon = 0;
                 comparisonStatement = "Paper and Paper.";
-            } else if (computerSelection === " scissors"
+            } else if (computerSelection === "scissors"
             && playerSelection === "scissors") {
                 playerWon = 0;
                 comparisonStatement = "Scissors and Scissors.";
@@ -91,10 +91,28 @@
 
         }
 
+        // execute 5 round game
+        let game = () => {
+            for (let i = 0; i < 5; i++) {
+                // 1 round
+                // player selection
+                let playerSelection = prompt("Make a selection: ");
+                console.log("Player: " + playerSelection);
+                    // error checking?
+                // computer selection
+                let computerSelection = computerPlay();
+                console.log("Computer: " + computerSelection);
+                // play round
+                console.log(playRound(playerSelection, computerSelection));
+            }
+        }
+
+        game();
+
         // TEST
-        const playerSelection = "rock";
-        const computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection))
+        // const playerSelection = "rock";
+        // const computerSelection = computerPlay();
+        // console.log(playRound(playerSelection, computerSelection));
         
     </script>
 </body>
