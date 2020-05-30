@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-A currently console-based simulation of the game "Rock, Paper, Scissors." User is prompted to play for 5 rounds and the results are printed to the console.
+A web-based simulation of the game "Rock, Paper, Scissors." 
 
 Created as part of The Odin Project curriculum
 
@@ -10,4 +10,6 @@ Definitely made a lot more improvements in regards to developer workflow this pr
 
 As for the content of the project itself, it has certainly increased my familiarity with JavaScript functions, something I'm trying particularly hard to improve. 
 
-Looking forward to eventually developing a full front-end for this project!
+~~Looking forward to eventually developing a full front-end for this project!~~
+
+Simple front-end implemented. Really enjoyed DOM manipulation here! 
